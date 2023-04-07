@@ -1,10 +1,11 @@
 part of 'tasks_bloc.dart';
 
-abstract class TasksState extends Equatable {
-  const TasksState();
-}
+class TasksState extends Equatable {
+  final List<TaskModel> allTasks;
+  const TasksState({
+    this.allTasks = const <TaskModel>[],
+  });
 
-class TasksInitial extends TasksState {
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [allTasks];
 }

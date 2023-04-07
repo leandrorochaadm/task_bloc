@@ -1,7 +1,7 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+
+import '../../models/models.dart';
 
 part 'tasks_event.dart';
 part 'tasks_state.dart';
