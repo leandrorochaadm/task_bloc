@@ -3,9 +3,25 @@ import 'package:flutter/material.dart';
 import '../blocs/blocs.dart';
 import '../models/models.dart';
 import '../widgets/widgets.dart';
+import 'screens.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key? key}) : super(key: key);
+
+  void _addTask(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
+            child: const AddTaskScreen(),
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +33,7 @@ class TasksScreen extends StatelessWidget {
             title: const Text('Tasks App'),
             actions: [
               IconButton(
-                onPressed: () {},
+                onPressed: () => _addTask(context),
                 icon: const Icon(Icons.add),
               )
             ],
@@ -30,7 +46,7 @@ class TasksScreen extends StatelessWidget {
             ],
           ),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () => _addTask(context),
             tooltip: 'Add Task',
             child: const Icon(Icons.add),
           ),

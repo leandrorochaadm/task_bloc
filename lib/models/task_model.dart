@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class TaskModel extends Equatable {
   final String title;
   bool? isDone;
